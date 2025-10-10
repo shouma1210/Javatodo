@@ -7,3 +7,5 @@ pluginManagement {
 }
 rootProject.name = "TodoApp"
 include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(settingsDir, "flutter_todo/.android/include_flutter.groovy"))

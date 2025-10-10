@@ -1,5 +1,7 @@
 package com.example.todoapp;
 
+import io.flutter.embedding.android.FlutterActivity;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,7 +32,12 @@ public class MainActivity extends AppCompatActivity implements AddTaskDialog.Add
         addTaskBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialog();
+                //openDialog();
+                startActivity(
+                    FlutterActivity.withNewEngine()
+                        .initialRoute("/converted_main")
+                        .build(MainActivity.this)
+            );
             }
         });
 
